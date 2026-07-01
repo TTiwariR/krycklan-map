@@ -17,23 +17,24 @@ map.getPane('sitesPane').style.zIndex = 650;
 
 // ===================== SITE DATA =====================
 const sites = [
-  {SiteNo:1, ShortName:"C1", FullName:"Risbäcken", Lat:64.248430, Lon:19.808109, Catchment:"Upper"},
-  {SiteNo:2, ShortName:"C2", FullName:"Västrabäcken", Lat:64.252650, Lon:19.775942, Catchment:"Upper"},
-  {SiteNo:4, ShortName:"C4", FullName:"Kallkällsmyren", Lat:64.259443, Lon:19.773903, Catchment:"Upper"},
-  {SiteNo:5, ShortName:"C5", FullName:"Stortjärnen Outlet", Lat:64.260802, Lon:19.760566, Catchment:"Upper"},
-  {SiteNo:6, ShortName:"C6", FullName:"Stortjärnbäcken", Lat:64.250850, Lon:19.773082, Catchment:"Upper"},
-  {SiteNo:7, ShortName:"C7", FullName:"Kallkällsbäcken", Lat:64.251721, Lon:19.776738, Catchment:"Upper"},
-  {SiteNo:9, ShortName:"C9", FullName:"Nyängesbäcken", Lat:64.237584, Lon:19.791428, Catchment:"Middle"},
-  {SiteNo:10, ShortName:"C10", FullName:"Stormyrbäcken", Lat:64.256904, Lon:19.786635, Catchment:"Upper"},
-  {SiteNo:12, ShortName:"C12", FullName:"Nymyrbäcken", Lat:64.240791, Lon:19.815406, Catchment:"Middle"},
-  {SiteNo:13, ShortName:"C13", FullName:"Långbäcken", Lat:64.233016, Lon:19.787323, Catchment:"Middle"},
-  {SiteNo:14, ShortName:"C14", FullName:"Åhedbäcken", Lat:64.225857, Lon:19.771106, Catchment:"Middle"},
-  {SiteNo:15, ShortName:"C15", FullName:"Övre Krycklan", Lat:64.246823, Lon:19.838748, Catchment:"Lower"},
-  {SiteNo:16, ShortName:"C16", FullName:"Krycklan", Lat:64.198353, Lon:19.868897, Catchment:"Lower"},
-  {SiteNo:20, ShortName:"C20", FullName:"Site 20", Lat:64.220317, Lon:19.757769, Catchment:"Upper"},
-  {SiteNo:21, ShortName:"C21", FullName:"Site 21", Lat:64.224195, Lon:19.767814, Catchment:"Middle"},
-  {SiteNo:22, ShortName:"C22", FullName:"Site 22", Lat:64.277492, Lon:19.817616, Catchment:"Middle"}
+  {SiteNo:1, ShortName:"C1", FullName:"Risbäcken", Lat:64.248430, Lon:19.808109, Catchment Stream order:"2"},
+  {SiteNo:2, ShortName:"C2", FullName:"Västrabäcken", Lat:64.252650, Lon:19.775942, Catchment Stream order:"1"},
+  {SiteNo:4, ShortName:"C4", FullName:"Kallkällsmyren", Lat:64.259443, Lon:19.773903, Catchment Stream order:"1"},
+  {SiteNo:5, ShortName:"C5", FullName:"Stortjärnen Outlet", Lat:64.260802, Lon:19.760566, Catchment:"1"},
+  {SiteNo:6, ShortName:"C6", FullName:"Stortjärnbäcken", Lat:64.250850, Lon:19.773082, Catchment Stream order:"1"},
+  {SiteNo:7, ShortName:"C7", FullName:"Kallkällsbäcken", Lat:64.251721, Lon:19.776738, Catchment Stream order:"2"},
+  {SiteNo:9, ShortName:"C9", FullName:"Nyängesbäcken", Lat:64.237584, Lon:19.791428, Catchment Stream order:"3"},
+  {SiteNo:10, ShortName:"C10", FullName:"Stormyrbäcken", Lat:64.256904, Lon:19.786635, Catchment Stream order:"2"},
+  {SiteNo:12, ShortName:"C12", FullName:"Nymyrbäcken", Lat:64.240791, Lon:19.815406, Catchment Stream order:"3"},
+  {SiteNo:13, ShortName:"C13", FullName:"Långbäcken", Lat:64.233016, Lon:19.787323, Catchment Stream order:"3"},
+  {SiteNo:14, ShortName:"C14", FullName:"Åhedbäcken", Lat:64.225857, Lon:19.771106, Catchment Stream order:"3"},
+  {SiteNo:15, ShortName:"C15", FullName:"Övre Krycklan", Lat:64.246823, Lon:19.838748, Catchment Stream order:"4"},
+  {SiteNo:16, ShortName:"C16", FullName:"Krycklan", Lat:64.198353, Lon:19.868897, Catchment Stream order:"4"},
+  {SiteNo:20, ShortName:"C20", FullName:"Site 20", Lat:64.220317, Lon:19.757769, Catchment Stream order:"1"},
+  {SiteNo:21, ShortName:"C21", FullName:"Site 21", Lat:64.224195, Lon:19.767814, Catchment Stream order:"1"},
+  {SiteNo:22, ShortName:"C22", FullName:"Site 22", Lat:64.277492, Lon:19.817616, Catchment Stream order:"2"}
 ];
+
 
 // ===================== STATE =====================
 let selectedSite = null;
