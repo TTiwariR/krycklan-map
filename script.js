@@ -35,7 +35,6 @@ const sites = [
   {SiteNo:22, ShortName:"C22", FullName:"Site 22", Lat:64.277492, Lon:19.817616, Catchment Stream order:"2"}
 ];
 
-
 // ===================== STATE =====================
 let selectedSite = null;
 window.catchmentStats = null;
