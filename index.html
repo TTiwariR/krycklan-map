@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Krycklan Explorer</title>
+
+  <!-- 📱 responsive scaling (IMPORTANT) -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Leaflet -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  />
+
+  <!-- your styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div id="sidebar">
+
+  <h2>Krycklan Explorer</h2>
+
+  <p>
+    Hydrological monitoring network of the Krycklan catchment.
+    Click sites to explore metadata and spatial context.
+  </p>
+
+  <hr>
+
+  <!-- FILTER -->
+  <label for="catchmentFilter">Catchment</label>
+  <select id="catchmentFilter">
+    <option value="all">All catchments</option>
+    <option value="Upper">Upper</option>
+    <option value="Middle">Middle</option>
+    <option value="Lower">Lower</option>
+  </select>
+
+  <hr>
+
+  <!-- LEGEND -->
+  <div>
+    <b>Legend</b><br>
+    🔵 Upper catchment<br>
+    🟢 Middle catchment<br>
+    🔴 Lower catchment
+  </div>
+
+  <hr>
+
+  <!-- 🧠 INFO PANEL (IMPORTANT ADDITION) -->
+  <div id="infoPanel">
+    <b>Selected Site</b>
+    <p>Click a site to view details</p>
+  </div>
+
+</div>
+
+<!-- MAP -->
+<div id="map"></div>
+
+<!-- SCRIPTS -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="script.js"></script>
+
+</body>
+<!-- DASHBOARD -->
+<div id="dashboard" style="
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 320px;
+  background: white;
+  padding: 10px;
+  z-index: 9999;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+">
+
+  <h3 id="dashTitle">Click a site</h3>
+  <div id="chartContainer">
+    No data yet
+  </div>
+
+</div>
+</html>

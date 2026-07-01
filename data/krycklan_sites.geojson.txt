@@ -1,0 +1,245 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "SiteNo": 1,
+        "ShortName": "RB",
+        "FullName": "Risbäcken",
+        "LongtermMonitoring": "Yes",
+        "Type": "Forest Stream",
+        "Catchment": "Upper"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [19.808109, 64.248430]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SiteNo": 2,
+        "ShortName": "SVV",
+        "FullName": "Västrabäcken",
+        "LongtermMonitoring": "Yes",
+        "Type": "Forest Stream",
+        "Catchment": "Upper"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [19.775942, 64.252650]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SiteNo": 4,
+        "ShortName": "SVE",
+        "FullName": "Kallkällsmyren",
+        "LongtermMonitoring": "Yes",
+        "Type": "Mire Stream",
+        "Catchment": "Upper"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [19.773903, 64.259443]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SiteNo": 5,
+        "ShortName": "STO",
+        "FullName": "Stortjärnen Outlet",
+        "LongtermMonitoring": "Yes",
+        "Type": "Lake Stream",
+        "Catchment": "Upper"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [19.760566, 64.260802]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SiteNo": 6,
+        "ShortName": "STB",
+        "FullName": "Stortjärnbäcken",
+        "LongtermMonitoring": "Yes",
+        "Type": "Lake Stream",
+        "Catchment": "Upper"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [19.773082, 64.250850]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SiteNo": 7,
+        "ShortName": "SVW",
+        "FullName": "Kallkällsbäcken",
+        "LongtermMonitoring": "Yes",
+        "Type": "Mixed Stream",
+        "Catchment": "Upper"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [19.776738, 64.251721]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SiteNo": 9,
+        "ShortName": "NÄB",
+        "FullName": "Nyängesbäcken",
+        "LongtermMonitoring": "No",
+        "Type": "Mixed Stream",
+        "Catchment": "Middle"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [19.791428, 64.237584]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SiteNo": 10,
+        "ShortName": "SMB",
+        "FullName": "Stormyrbäcken",
+        "LongtermMonitoring": "Yes",
+        "Type": "Mixed Stream",
+        "Catchment": "Upper"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [19.786635, 64.256904]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SiteNo": 12,
+        "ShortName": "NMB",
+        "FullName": "Nymyrbäcken",
+        "LongtermMonitoring": "Yes",
+        "Type": "Mixed Stream",
+        "Catchment": "Middle"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [19.815406, 64.240791]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SiteNo": 13,
+        "ShortName": "LB",
+        "FullName": "Långbäcken",
+        "LongtermMonitoring": "Yes",
+        "Type": "Mixed Stream",
+        "Catchment": "Middle"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [19.787323, 64.233016]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SiteNo": 14,
+        "ShortName": "ÅB",
+        "FullName": "Åhedbäcken",
+        "LongtermMonitoring": "No",
+        "Type": "Mixed Stream",
+        "Catchment": "Middle"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [19.771106, 64.225857]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SiteNo": 15,
+        "ShortName": "OKL",
+        "FullName": "Övre Krycklan",
+        "LongtermMonitoring": "No",
+        "Type": "Mixed Stream",
+        "Catchment": "Lower"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [19.838748, 64.246823]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SiteNo": 16,
+        "ShortName": "KL",
+        "FullName": "Krycklan",
+        "LongtermMonitoring": "Yes",
+        "Type": "Mixed Stream",
+        "Catchment": "Lower"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [19.868897, 64.198353]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SiteNo": 20,
+        "ShortName": "S20",
+        "FullName": "Site 20",
+        "LongtermMonitoring": "Yes",
+        "Type": "Mixed Stream",
+        "Catchment": "Upper"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [19.757769, 64.220317]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SiteNo": 21,
+        "ShortName": "S21",
+        "FullName": "Site 21",
+        "LongtermMonitoring": "No",
+        "Type": "Mixed Stream",
+        "Catchment": "Middle"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [19.767814, 64.224195]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "SiteNo": 22,
+        "ShortName": "S22",
+        "FullName": "Site 22",
+        "LongtermMonitoring": "No",
+        "Type": "Mixed Stream",
+        "Catchment": "Middle"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [19.817616, 64.277492]
+      }
+    }
+  ]
+}

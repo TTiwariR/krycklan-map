@@ -1,0 +1,146 @@
+{
+  "C1": {
+    "Area": 0.6,
+    "Lake_y": 0,
+    "Forest_y": 87.2,
+    "Lake_s": 0,
+    "Peat_s": 0,
+    "TillThin": 100,
+    "SortedSed_s": 0
+  },
+  "C2": {
+    "Area": 0.13,
+    "Lake_y": 0,
+    "Forest_y": 98.7,
+    "Lake_s": 0,
+    "Peat_s": 0,
+    "TillThin": 99.95793016,
+    "SortedSed_s": 0
+  },
+  "C4": {
+    "Area": 0.16,
+    "Lake_y": 0,
+    "Forest_y": 49.6,
+    "Lake_s": 0,
+    "Peat_s": 55.4,
+    "TillThin": 48.97269913,
+    "SortedSed_s": 0
+  },
+  "C5": {
+    "Area": 0.81,
+    "Lake_y": 5.8,
+    "Forest_y": 57.5,
+    "Lake_s": 4.9,
+    "Peat_s": 41,
+    "TillThin": 45.89261129,
+    "SortedSed_s": 0
+  },
+  "C6": {
+    "Area": 1.28,
+    "Lake_y": 3.7,
+    "Forest_y": 70.7,
+    "Lake_s": 3.1,
+    "Peat_s": 27.1,
+    "TillThin": 65.06501492,
+    "SortedSed_s": 0
+  },
+  "C7": {
+    "Area": 0.5,
+    "Lake_y": 0,
+    "Forest_y": 82.7,
+    "Lake_s": 0,
+    "Peat_s": 17.9,
+    "TillThin": 80.57338468,
+    "SortedSed_s": 0
+  },
+  "C9": {
+    "Area": 3.11,
+    "Lake_y": 1.5,
+    "Forest_y": 83.8,
+    "Lake_s": 1.3,
+    "Peat_s": 14.7,
+    "TillThin": 75,
+    "SortedSed_s": 8
+  },
+  "C10": {
+    "Area": 3.25,
+    "Lake_y": 0,
+    "Forest_y": 72.7,
+    "Lake_s": 0,
+    "Peat_s": 29.8,
+    "TillThin": 70.68480091,
+    "SortedSed_s": 0.476694126
+  },
+  "C12": {
+    "Area": 5.71,
+    "Lake_y": 0,
+    "Forest_y": 79.3,
+    "Lake_s": 0,
+    "Peat_s": 20.5,
+    "TillThin": 74.97587028,
+    "SortedSed_s": 5.86467133
+  },
+  "C13": {
+    "Area": 7.26,
+    "Lake_y": 0.8,
+    "Forest_y": 87.4,
+    "Lake_s": 0.6,
+    "Peat_s": 12.3,
+    "TillThin": 69.77745872,
+    "SortedSed_s": 15.88611144
+  },
+  "C14": {
+    "Area": 12.61,
+    "Lake_y": 0.1,
+    "Forest_y": 86.4,
+    "Lake_s": 0.1,
+    "Peat_s": 7.3,
+    "TillThin": 53.00162433,
+    "SortedSed_s": 38.12795619
+  },
+  "C15": {
+    "Area": 19.66,
+    "Lake_y": 2,
+    "Forest_y": 77.6,
+    "Lake_s": 1.9,
+    "Peat_s": 14.1,
+    "TillThin": 72.98498994,
+    "SortedSed_s": 9.458239642
+  },
+  "C16": {
+    "Area": 66.82,
+    "Lake_y": 0.7,
+    "Forest_y": 84,
+    "Lake_s": 0.6,
+    "Peat_s": 9.5,
+    "TillThin": 58.21940617,
+    "SortedSed_s": 30.2
+  },
+  "C20": {
+    "Area": 1.42,
+    "Lake_y": 0,
+    "Forest_y": 86.3,
+    "Lake_s": 0,
+    "Peat_s": 8.3,
+    "TillThin": 65.29854594,
+    "SortedSed_s": 21.40180812
+  },
+  "C21": {
+    "Area": 0.19,
+    "Lake_y": 0,
+    "Forest_y": 94.4,
+    "Lake_s": 0,
+    "Peat_s": 0,
+    "TillThin": 56.14921313,
+    "SortedSed_s": 43.83135807
+  },
+  "C22": {
+    "Area": 4.65,
+    "Lake_y": 2.5,
+    "Forest_y": 69.4,
+    "Lake_s": 2.5,
+    "Peat_s": 27.4,
+    "TillThin": 68.36146688,
+    "SortedSed_s": 0
+  }
+}
