@@ -462,8 +462,28 @@ function drawSites(filter) {
     // CATCHMENT INFORMATION
     // =====================
 
-    const info =
-      catchmentInfo[siteNo];
+
+const info = {
+
+  1: { area: 0.48, wetland: 0, forest: 100, lake: 0 },
+  2: { area: 0.12, wetland: 0, forest: 100, lake: 0 },
+  3: { area: 0.04, wetland: 53, forest: 47, lake: 0 },
+  4: { area: 0.18, wetland: 51, forest: 49, lake: 0 },
+  5: { area: 0.65, wetland: 48, forest: 46, lake: 6 },
+  6: { area: 1.10, wetland: 29, forest: 65, lake: 4 },
+  7: { area: 0.47, wetland: 19, forest: 81, lake: 0 },
+  9: { area: 2.88, wetland: 15, forest: 80, lake: 1 },
+  10: { area: 3.36, wetland: 29, forest: 71, lake: 0 },
+  12: { area: 5.44, wetland: 19, forest: 81, lake: 0 },
+  13: { area: 7.00, wetland: 12, forest: 86, lake: 1 },
+  14: { area: 14.10, wetland: 7, forest: 91, lake: 1 },
+  15: { area: 20.13, wetland: 15, forest: 82, lake: 2 },
+  16: { area: 67.80, wetland: 9, forest: 88, lake: 1 },
+  20: { area: 1.45, wetland: 12, forest: 87, lake: 0 },
+  21: { area: 0.26, wetland: 0, forest: 100, lake: 0 },
+  22: { area: 4.91, wetland: 29, forest: 68, lake: 3 }
+
+}[siteNo];
 
 
     // =====================
