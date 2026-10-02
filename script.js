@@ -550,9 +550,8 @@ function drawSites(filter = "all") {
 
 const streamOrderFilter =
   document.getElementById(
-    "catchmentFilter"
+    "streamOrderFilter"
   );
-
 
 if (streamOrderFilter) {
 
