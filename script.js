@@ -317,6 +317,7 @@ const siteLayer = L.layerGroup().addTo(map);
 // ===================== DRAW SITES =====================
 
 function drawSites(filter) {
+
   if (filter === undefined) {
     filter = "all";
   }
@@ -325,6 +326,10 @@ function drawSites(filter) {
 
   sites.forEach(function(site) {
 
+    // =====================
+    // FILTER
+    // =====================
+
     if (
       filter !== "all" &&
       Number(site.StreamOrder) !== Number(filter)
@@ -332,11 +337,17 @@ function drawSites(filter) {
       return;
     }
 
+
     // =====================
     // MARKER COLOR
     // =====================
 
     const markerColor = getColor(site.StreamOrder);
+
+
+    // =====================
+    // MAP MARKER
+    // =====================
 
     const marker = L.circleMarker(
       [
@@ -352,6 +363,7 @@ function drawSites(filter) {
         pane: "sitesPane"
       }
     );
+
 
     marker.on(
       "click",
@@ -379,19 +391,31 @@ function drawSites(filter) {
     if (stats) {
 
       const landCover = {
-        Forest: Number(stats.Forest_y) || 0,
-        Lake: Number(stats.Lake_y) || 0,
-        Peat: Number(stats.Peat_s) || 0,
-        Till: Number(stats.TillThin) || 0
+
+        Forest:
+          Number(stats.Forest_y) || 0,
+
+        Lake:
+          Number(stats.Lake_y) || 0,
+
+        Peat:
+          Number(stats.Peat_s) || 0,
+
+        Till:
+          Number(stats.TillThin) || 0
       };
 
-      const entries = Object.entries(landCover);
+      const entries =
+        Object.entries(landCover);
 
-      entries.sort(function(a, b) {
-        return b[1] - a[1];
-      });
+      entries.sort(
+        function(a, b) {
+          return b[1] - a[1];
+        }
+      );
 
-      dominant = entries[0][0];
+      dominant =
+        entries[0][0];
     }
 
 
@@ -399,55 +423,97 @@ function drawSites(filter) {
     // POPUP
     // =====================
 
-   marker.bindPopup(`
-  <div>
+    marker.bindPopup(`
+      <div>
 
-    <h3 style="margin-top:0;">
-      ${site.ShortName} — ${site.FullName}
-    </h3>
+        <h3 style="margin-top:0;">
+          C${site.SiteNo} — ${site.FullName}
+        </h3>
 
-    <p>
-      <b>Stream Order:</b>
-      ${site.StreamOrder}
-    </p>
 
-    <hr>
+        <p>
+          <b>Stream Order:</b>
+          ${site.StreamOrder}
+        </p>
 
-    <b>Catchment Characteristics</b><br><br>
 
-    📐 Area:
-    ${site.Area} km²<br>
+        <hr>
 
-    🌿 Wetland:
-    ${site.Wetland}%<br>
 
-    🌲 Forest:
-    ${site.Forest}%<br>
+        <b>Catchment Characteristics</b>
 
-    💧 Lake:
-    ${site.Lake}%<br>
+        <br><br>
 
-    <hr>
+        📐 Area:
+        ${site.Area} km²
 
-    <b>Land Cover Composition</b><br><br>
+        <br>
 
-    🌲 Forest:
-    ${stats?.Forest_y ?? "N/A"}%<br>
+        🌿 Wetland:
+        ${site.Wetland}%
 
-    💧 Lake:
-    ${stats?.Lake_y ?? "N/A"}%<br>
+        <br>
 
-    🪵 Peat:
-    ${stats?.Peat_s ?? "N/A"}%<br>
+        🌲 Forest:
+        ${site.Forest}%
 
-    🪨 Till:
-    ${stats?.TillThin ?? "N/A"}%<br>
+        <br>
 
-    🟤 Sorted Sediment:
-    ${stats?.SortedSed_s ?? "N/A"}%
+        💧 Lake:
+        ${site.Lake}%
 
-  </div>
-`);
+
+        <hr>
+
+
+        <p>
+          <b>Dominant land cover:</b>
+          ${dominant}
+        </p>
+
+
+        <hr>
+
+
+        <b>Land Cover Composition</b>
+
+        <br><br>
+
+        🌲 Forest:
+        ${stats?.Forest_y ?? "N/A"}%
+
+        <br>
+
+        💧 Lake:
+        ${stats?.Lake_y ?? "N/A"}%
+
+        <br>
+
+        🪵 Peat:
+        ${stats?.Peat_s ?? "N/A"}%
+
+        <br>
+
+        🪨 Till:
+        ${stats?.TillThin ?? "N/A"}%
+
+        <br>
+
+        🟤 Sorted Sediment:
+        ${stats?.SortedSed_s ?? "N/A"}%
+
+      </div>
+    `);
+
+
+    // =====================
+    // ADD MARKER
+    // =====================
+
+    marker.addTo(siteLayer);
+
+  });
+}
 
 
 // =====================
