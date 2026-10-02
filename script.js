@@ -399,54 +399,55 @@ function drawSites(filter) {
     // POPUP
     // =====================
 
-    marker.bindPopup(`
-      <div>
+   marker.bindPopup(`
+  <div>
 
-        <h3 style="margin-top:0;">
-          ${site.ShortName}
-        </h3>
+    <h3 style="margin-top:0;">
+      ${site.ShortName} — ${site.FullName}
+    </h3>
 
-        <p>
-          ${site.FullName}
-        </p>
+    <p>
+      <b>Stream Order:</b>
+      ${site.StreamOrder}
+    </p>
 
-        <hr>
+    <hr>
 
-        <p>
-          <b>Stream order:</b>
-          ${site.StreamOrder}
-        </p>
+    <b>Catchment Characteristics</b><br><br>
 
-        <p>
-          <b>Dominant land cover:</b>
-          ${dominant}
-        </p>
+    📐 Area:
+    ${site.Area} km²<br>
 
-        <hr>
+    🌿 Wetland:
+    ${site.Wetland}%<br>
 
-        <b>Land Cover</b><br>
+    🌲 Forest:
+    ${site.Forest}%<br>
 
-        🌲 Forest:
-        ${stats?.Forest_y ?? "N/A"}%<br>
+    💧 Lake:
+    ${site.Lake}%<br>
 
-        💧 Lake:
-        ${stats?.Lake_y ?? "N/A"}%<br>
+    <hr>
 
-        🪵 Peat:
-        ${stats?.Peat_s ?? "N/A"}%<br>
+    <b>Land Cover Composition</b><br><br>
 
-        🪨 Till:
-        ${stats?.TillThin ?? "N/A"}%<br>
+    🌲 Forest:
+    ${stats?.Forest_y ?? "N/A"}%<br>
 
-        🟤 Sorted Sediment:
-        ${stats?.SortedSed_s ?? "N/A"}%
+    💧 Lake:
+    ${stats?.Lake_y ?? "N/A"}%<br>
 
-      </div>
-    `);
+    🪵 Peat:
+    ${stats?.Peat_s ?? "N/A"}%<br>
 
-    marker.addTo(siteLayer);
-  });
-}
+    🪨 Till:
+    ${stats?.TillThin ?? "N/A"}%<br>
+
+    🟤 Sorted Sediment:
+    ${stats?.SortedSed_s ?? "N/A"}%
+
+  </div>
+`);
 
 
 // =====================
