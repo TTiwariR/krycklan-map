@@ -264,25 +264,30 @@ function renderChart(site) {
     <p>
              <b>Land Cover Composition</b>
 
-        <br><br>
+<br><br>
 
-        🌲 Forest:
-        ${stats?.Forest_y != null ? Number(stats.Forest_y).toFixed(2) : "N/A"}%
+🌲 Forest:
+${stats?.Forest_y != null ? Number(stats.Forest_y).toFixed(2) : "N/A"}%
 
-        <br>
+<br>
 
-        💧 Lake:
-        ${stats?.Lake_y != null ? Number(stats.Lake_y).toFixed(2) : "N/A"}%
+💧 Lake:
+${stats?.Lake_y != null ? Number(stats.Lake_y).toFixed(2) : "N/A"}%
 
-        <br>
+<br>
 
-        🪵 Peat:
-        ${stats?.Peat_s != null ? Number(stats.Peat_s).toFixed(2) : "N/A"}%
+🪵 Peat:
+${stats?.Peat_s != null ? Number(stats.Peat_s).toFixed(2) : "N/A"}%
 
-        <br>
+<br>
 
-        🪨 Till:
-        ${stats?.TillThin != null ? Number(stats.TillThin).toFixed(2) : "N/A"}%
+🪨 Till:
+${stats?.TillThin != null ? Number(stats.TillThin).toFixed(2) : "N/A"}%
+
+<br>
+
+🟤 Sorted Sediment:
+${stats?.SortedSed_s != null ? Number(stats.SortedSed_s).toFixed(2) : "N/A"}%
 
         <br>
 
