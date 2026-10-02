@@ -1,43 +1,33 @@
 // ===================== MAP =====================
 
-const map = L.map('map').setView(
+const map = L.map("map").setView(
   [64.245, 19.80],
   12
 );
 
-
 L.tileLayer(
-  'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+  "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
   {
-    attribution: '© OpenStreetMap'
+    attribution: "© OpenStreetMap"
   }
 ).addTo(map);
 
 
 // ===================== PANES =====================
 
-map.createPane('streamsPane');
-map.getPane('streamsPane').style.zIndex = 300;
+map.createPane("streamsPane");
+map.getPane("streamsPane").style.zIndex = 300;
 
-map.createPane('catchmentsPane');
-map.getPane('catchmentsPane').style.zIndex = 400;
+map.createPane("catchmentsPane");
+map.getPane("catchmentsPane").style.zIndex = 400;
 
-map.createPane('sitesPane');
-map.getPane('sitesPane').style.zIndex = 650;
+map.createPane("sitesPane");
+map.getPane("sitesPane").style.zIndex = 650;
 
 
 // ===================== SITE DATA =====================
-//
-// Stream order:
-//
-// 1 = C2, C4, C5, C6, C20, C21
-// 2 = C1, C7, C10, C22
-// 3 = C9, C12, C13, C14
-// 4 = C15, C16
-//
 
 const sites = [
-
   {
     SiteNo: 1,
     ShortName: "C1",
@@ -46,7 +36,6 @@ const sites = [
     Lon: 19.808109,
     StreamOrder: 2
   },
-
   {
     SiteNo: 2,
     ShortName: "C2",
@@ -55,7 +44,6 @@ const sites = [
     Lon: 19.775942,
     StreamOrder: 1
   },
-
   {
     SiteNo: 4,
     ShortName: "C4",
@@ -64,7 +52,6 @@ const sites = [
     Lon: 19.773903,
     StreamOrder: 1
   },
-
   {
     SiteNo: 5,
     ShortName: "C5",
@@ -73,7 +60,6 @@ const sites = [
     Lon: 19.760566,
     StreamOrder: 1
   },
-
   {
     SiteNo: 6,
     ShortName: "C6",
@@ -82,7 +68,6 @@ const sites = [
     Lon: 19.773082,
     StreamOrder: 1
   },
-
   {
     SiteNo: 7,
     ShortName: "C7",
@@ -91,7 +76,6 @@ const sites = [
     Lon: 19.776738,
     StreamOrder: 2
   },
-
   {
     SiteNo: 9,
     ShortName: "C9",
@@ -100,7 +84,6 @@ const sites = [
     Lon: 19.791428,
     StreamOrder: 3
   },
-
   {
     SiteNo: 10,
     ShortName: "C10",
@@ -109,7 +92,6 @@ const sites = [
     Lon: 19.786635,
     StreamOrder: 2
   },
-
   {
     SiteNo: 12,
     ShortName: "C12",
@@ -118,7 +100,6 @@ const sites = [
     Lon: 19.815406,
     StreamOrder: 3
   },
-
   {
     SiteNo: 13,
     ShortName: "C13",
@@ -127,7 +108,6 @@ const sites = [
     Lon: 19.787323,
     StreamOrder: 3
   },
-
   {
     SiteNo: 14,
     ShortName: "C14",
@@ -136,7 +116,6 @@ const sites = [
     Lon: 19.771106,
     StreamOrder: 3
   },
-
   {
     SiteNo: 15,
     ShortName: "C15",
@@ -145,7 +124,6 @@ const sites = [
     Lon: 19.838748,
     StreamOrder: 4
   },
-
   {
     SiteNo: 16,
     ShortName: "C16",
@@ -154,7 +132,6 @@ const sites = [
     Lon: 19.868897,
     StreamOrder: 4
   },
-
   {
     SiteNo: 20,
     ShortName: "C20",
@@ -163,7 +140,6 @@ const sites = [
     Lon: 19.757769,
     StreamOrder: 1
   },
-
   {
     SiteNo: 21,
     ShortName: "C21",
@@ -172,7 +148,6 @@ const sites = [
     Lon: 19.767814,
     StreamOrder: 1
   },
-
   {
     SiteNo: 22,
     ShortName: "C22",
@@ -181,54 +156,46 @@ const sites = [
     Lon: 19.817616,
     StreamOrder: 2
   }
-
 ];
 
 
 // ===================== STATE =====================
 
 let selectedSite = null;
-
 window.catchmentStats = null;
 
 
 // ===================== STREAM ORDER COLORS =====================
 
 function getColor(streamOrder) {
-
-  return {
-
+  const colors = {
     1: "#1b9e77",
     2: "#d95f02",
     3: "#7570b3",
     4: "#e7298a"
+  };
 
-  }[streamOrder] || "#666";
-
+  return colors[streamOrder] || "#666666";
 }
 
 
 // ===================== STREAM ORDER LABEL =====================
 
 function getStreamOrderLabel(order) {
-
-  return `Stream Order ${order}`;
-
+  return "Stream Order " + order;
 }
 
 
 // ===================== SITE INFORMATION PANEL =====================
 
 function updatePanel(site) {
+  const panel = document.getElementById("infoPanel");
 
-  const panel =
-    document.getElementById("infoPanel");
-
-  if (!panel) return;
-
+  if (!panel) {
+    return;
+  }
 
   panel.innerHTML = `
-
     <h3>${site.ShortName}</h3>
 
     <p>
@@ -240,64 +207,36 @@ function updatePanel(site) {
       <b>Stream order:</b>
       ${site.StreamOrder}
     </p>
-
   `;
-
 }
 
 
 // ===================== DASHBOARD =====================
 
 function renderChart(site) {
+  console.log("renderChart fired:", site);
 
-  console.log(
-    "renderChart fired:",
-    site
-  );
-
-
-  const container =
-    document.getElementById(
-      "chartContainer"
-    );
-
-  const title =
-    document.getElementById(
-      "dashTitle"
-    );
-
+  const container = document.getElementById("chartContainer");
+  const title = document.getElementById("dashTitle");
 
   if (!container || !title) {
-
-    console.warn(
-      "Dashboard elements missing"
-    );
-
+    console.warn("Dashboard elements missing");
     return;
-
   }
 
+  const stats = window.catchmentStats
+    ? window.catchmentStats["C" + site.SiteNo]
+    : null;
 
-  const stats =
-    window.catchmentStats?.[
-      `C${site.SiteNo}`
-    ];
-
-
-  console.log(
-    "stats:",
-    stats
-  );
-
+  console.log("stats:", stats);
 
   title.innerHTML =
-    `${site.ShortName} — ${getStreamOrderLabel(site.StreamOrder)}`;
-
+    site.ShortName +
+    " — " +
+    getStreamOrderLabel(site.StreamOrder);
 
   if (!stats) {
-
     container.innerHTML = `
-
       <p>
         <b>${site.FullName}</b>
       </p>
@@ -308,19 +247,14 @@ function renderChart(site) {
       </p>
 
       <p>
-        No land-cover statistics
-        are available for this site.
+        No land-cover statistics are available for this site.
       </p>
-
     `;
 
     return;
-
   }
 
-
   container.innerHTML = `
-
     <p>
       <b>Stream Order:</b>
       ${site.StreamOrder}
@@ -354,145 +288,110 @@ function renderChart(site) {
       🟤 Sorted Sediment:
       ${stats.SortedSed_s ?? "N/A"}%
     </p>
-
   `;
-
 }
 
 
 // ===================== SITE CLICK =====================
 
 function selectSite(site) {
-
   selectedSite = site;
 
-
   updatePanel(site);
-
 
   map.panTo([
     site.Lat,
     site.Lon
   ]);
 
-
   renderChart(site);
-
 }
 
 
 // ===================== SITE LAYER =====================
 
-const siteLayer =
-  L.layerGroup().addTo(map);
+const siteLayer = L.layerGroup().addTo(map);
 
 
 // ===================== DRAW SITES =====================
 
-function drawSites(filter = "all") {
+function drawSites(filter) {
+  if (filter === undefined) {
+    filter = "all";
+  }
 
   siteLayer.clearLayers();
 
-
-  sites.forEach(site => {
-
-
-    // Filter by stream order
+  sites.forEach(function(site) {
 
     if (
       filter !== "all" &&
-      Number(site.StreamOrder) !==
-      Number(filter)
+      Number(site.StreamOrder) !== Number(filter)
     ) {
-
       return;
-
     }
 
-
-    // Create marker
-
-    const marker =
-      L.circleMarker(
-        [
-          site.Lat,
-          site.Lon
-        ],
-        {
-
-          radius: 7,
-
-          color: "#000",
-
-          weight: 1,
-
-          fillColor:
-            getColor(
-              site.StreamOrder
-            ),
-
-          fillOpacity: 0.9,
-
-          pane: "sitesPane"
-
-        }
-      );
-
-
-    // Click
+    const marker = L.circleMarker(
+      [
+        site.Lat,
+        site.Lon
+      ],
+      {
+        radius: 7,
+        color: "#000000",
+        weight: 1,
+        fillColor: getColor(site.StreamOrder),
+        fillOpacity: 0.9,
+        pane: "sitesPane"
+      }
+    );
 
     marker.on(
       "click",
-      () => selectSite(site)
+      function() {
+        selectSite(site);
+      }
     );
 
 
-    // Statistics
+    // =====================
+    // STATISTICS
+    // =====================
 
-    const stats =
-      window.catchmentStats?.[
-        `C${site.SiteNo}`
-      ];
+    const stats = window.catchmentStats
+      ? window.catchmentStats["C" + site.SiteNo]
+      : null;
 
 
-    // Dominant land cover
+    // =====================
+    // DOMINANT LAND COVER
+    // =====================
 
     let dominant = "N/A";
 
-
     if (stats) {
-
       const landCover = {
-
-        Forest:
-          Number(stats.Forest_y) || 0,
-
-        Lake:
-          Number(stats.Lake_y) || 0,
-
-        Peat:
-          Number(stats.Peat_s) || 0,
-
-        Till:
-          Number(stats.TillThin) || 0
-
+        Forest: Number(stats.Forest_y) || 0,
+        Lake: Number(stats.Lake_y) || 0,
+        Peat: Number(stats.Peat_s) || 0,
+        Till: Number(stats.TillThin) || 0
       };
 
+      const entries = Object.entries(landCover);
 
-      dominant =
-        Object.entries(landCover)
-          .sort(
-            (a, b) =>
-              b[1] - a[1]
-          )[0][0];
+      entries.sort(function(a, b) {
+        return b[1] - a[1];
+      });
 
+      dominant = entries[0][0];
     }
 
 
-    // Popup
+    // =====================
+    // POPUP
+    // =====================
 
     marker.bindPopup(`
-
       <div>
 
         <h3 style="margin-top:0;">
@@ -535,138 +434,107 @@ function drawSites(filter = "all") {
         ${stats?.SortedSed_s ?? "N/A"}%
 
       </div>
-
     `);
 
-
     marker.addTo(siteLayer);
-
   });
-
 }
 
 
 // ===================== FILTER =====================
 
 const streamOrderFilter =
-  document.getElementById(
-    "streamOrderFilter"
-  );
+  document.getElementById("streamOrderFilter");
 
 if (streamOrderFilter) {
 
   streamOrderFilter.addEventListener(
     "change",
-    event => {
-
-      drawSites(
-        event.target.value
-      );
-
+    function(event) {
+      drawSites(event.target.value);
     }
   );
 
+} else {
+
+  console.warn(
+    "Stream Order filter not found."
+  );
 }
 
 
 // ===================== LOAD CATCHMENT STATISTICS =====================
 
-fetch(
-  "data/catchmentStats.json"
-)
+fetch("data/catchmentStats.json")
 
-  .then(response => {
+  .then(function(response) {
 
     if (!response.ok) {
-
       throw new Error(
-        `HTTP error ${response.status}`
+        "HTTP error " + response.status
       );
-
     }
 
     return response.json();
-
   })
 
-  .then(stats => {
+  .then(function(stats) {
 
-    window.catchmentStats =
-      stats;
-
+    window.catchmentStats = stats;
 
     console.log(
       "Catchment statistics loaded"
     );
 
-
     drawSites("all");
-
   })
 
-  .catch(error => {
+  .catch(function(error) {
 
     console.error(
       "Stats error:",
       error
     );
 
-
-    // Draw sites even if
-    // statistics fail.
-
+    // Draw sites even if statistics fail.
     drawSites("all");
-
   });
 
 
 // ===================== CATCHMENTS =====================
 
-fetch(
-  "data/regular_catchments.geojson"
-)
+fetch("data/regular_catchments.geojson")
 
-  .then(response => {
+  .then(function(response) {
 
     if (!response.ok) {
-
       throw new Error(
-        `HTTP error ${response.status}`
+        "HTTP error " + response.status
       );
-
     }
 
     return response.json();
-
   })
 
-  .then(data => {
+  .then(function(data) {
 
     L.geoJSON(
       data,
       {
-
-        pane:
-          "catchmentsPane",
+        pane: "catchmentsPane",
 
         style: {
-
-          color: "#444",
-
+          color: "#444444",
           weight: 1,
-
           fillColor: "#6baed6",
-
           fillOpacity: 0.15
-
         }
-
       }
     ).addTo(map);
 
   })
 
-  .catch(error => {
+  .catch(function(error) {
 
     console.error(
       "Catchment GeoJSON error:",
@@ -678,52 +546,38 @@ fetch(
 
 // ===================== STREAMS =====================
 
-fetch(
-  "data/streams.geojson"
-)
+fetch("data/streams.geojson")
 
-  .then(response => {
+  .then(function(response) {
 
     if (!response.ok) {
-
       throw new Error(
-        `HTTP error ${response.status}`
+        "HTTP error " + response.status
       );
-
     }
 
     return response.json();
-
   })
 
-  .then(data => {
+  .then(function(data) {
 
     const streamLayer =
       L.geoJSON(
         data,
         {
-
-          pane:
-            "streamsPane",
+          pane: "streamsPane",
 
           style: {
-
             color: "#2171b5",
-
             weight: 2,
-
             opacity: 0.8
-
           }
-
         }
       ).addTo(map);
 
 
     if (
-      streamLayer
-        .getBounds()
-        .isValid()
+      streamLayer.getBounds().isValid()
     ) {
 
       map.fitBounds(
@@ -734,7 +588,7 @@ fetch(
 
   })
 
-  .catch(error => {
+  .catch(function(error) {
 
     console.error(
       "Streams GeoJSON error:",
@@ -751,73 +605,53 @@ const legend =
     position: "bottomright"
   });
 
+legend.onAdd = function() {
 
-legend.onAdd =
-  function () {
+  const div =
+    L.DomUtil.create(
+      "div",
+      "legend"
+    );
 
-    const div =
-      L.DomUtil.create(
-        "div",
-        "legend"
-      );
+  div.innerHTML = `
+    <div class="legend-title">
+      Stream Order
+    </div>
 
+    <div class="legend-item">
+      <span
+        class="legend-symbol"
+        style="background:#1b9e77;"
+      ></span>
+      Stream Order 1
+    </div>
 
-    div.innerHTML = `
+    <div class="legend-item">
+      <span
+        class="legend-symbol"
+        style="background:#d95f02;"
+      ></span>
+      Stream Order 2
+    </div>
 
-      <div class="legend-title">
-        Stream Order
-      </div>
+    <div class="legend-item">
+      <span
+        class="legend-symbol"
+        style="background:#7570b3;"
+      ></span>
+      Stream Order 3
+    </div>
 
-      <div class="legend-item">
+    <div class="legend-item">
+      <span
+        class="legend-symbol"
+        style="background:#e7298a;"
+      ></span>
+      Stream Order 4
+    </div>
+  `;
 
-        <span
-          class="legend-symbol"
-          style="background:#1b9e77;"
-        ></span>
-
-        Stream Order 1
-
-      </div>
-
-      <div class="legend-item">
-
-        <span
-          class="legend-symbol"
-          style="background:#d95f02;"
-        ></span>
-
-        Stream Order 2
-
-      </div>
-
-      <div class="legend-item">
-
-        <span
-          class="legend-symbol"
-          style="background:#7570b3;"
-        ></span>
-
-        Stream Order 3
-
-      </div>
-
-      <div class="legend-item">
-
-        <span
-          class="legend-symbol"
-          style="background:#e7298a;"
-        ></span>
-
-        Stream Order 4
-
-      </div>
-
-    `;
-
-
-    return div;
-
-  };
-
+  return div;
+};
 
 legend.addTo(map);
