@@ -262,7 +262,7 @@ function renderChart(site) {
     </p>
 
     <p>
-             <b>Land Cover Composition</b>
+        <b>Land Cover Composition</b>
 
 <br><br>
 
@@ -288,11 +288,6 @@ ${stats?.TillThin != null ? Number(stats.TillThin).toFixed(2) : "N/A"}%
 
 🟤 Sorted Sediment:
 ${stats?.SortedSed_s != null ? Number(stats.SortedSed_s).toFixed(2) : "N/A"}%
-
-        <br>
-
-        🟤 Sorted Sediment:
-        ${stats?.SortedSed_s != null ? Number(stats.SortedSed_s).toFixed(2) : "N/A"}%
     </p>
   `;
 }
