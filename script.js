@@ -332,6 +332,12 @@ function drawSites(filter) {
       return;
     }
 
+    // =====================
+    // MARKER COLOR
+    // =====================
+
+    const markerColor = getColor(site.StreamOrder);
+
     const marker = L.circleMarker(
       [
         site.Lat,
@@ -339,9 +345,9 @@ function drawSites(filter) {
       ],
       {
         radius: 7,
-        color: "#000000",
+        color: markerColor,
         weight: 1,
-        fillColor: getColor(site.StreamOrder),
+        fillColor: markerColor,
         fillOpacity: 0.9,
         pane: "sitesPane"
       }
@@ -371,6 +377,7 @@ function drawSites(filter) {
     let dominant = "N/A";
 
     if (stats) {
+
       const landCover = {
         Forest: Number(stats.Forest_y) || 0,
         Lake: Number(stats.Lake_y) || 0,
@@ -442,7 +449,9 @@ function drawSites(filter) {
 }
 
 
-// ===================== FILTER =====================
+// =====================
+// FILTER
+// =====================
 
 const streamOrderFilter =
   document.getElementById("streamOrderFilter");
