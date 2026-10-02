@@ -262,7 +262,8 @@ function renderChart(site) {
     </p>
 
     <p>
-               <b>Land Cover Composition</b>
+              
+        <b>Land Cover Composition</b>
 
         <br><br>
 
@@ -649,11 +650,8 @@ function drawSites(filter) {
         <hr>
 
 
+       
         <b>Land Cover Composition</b>
-
-      <br><br>
-
-                   <b>Land Cover Composition</b>
 
         <br><br>
 
@@ -679,7 +677,6 @@ function drawSites(filter) {
 
         🟤 Sorted Sediment:
         ${Number(stats.SortedSed_s).toFixed(2)}%
-
       </div>
 
     `);
