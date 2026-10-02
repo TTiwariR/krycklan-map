@@ -5,7 +5,6 @@
 
   <title>Krycklan Explorer</title>
 
-  <!-- 📱 responsive scaling (IMPORTANT) -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Leaflet -->
@@ -14,7 +13,7 @@
     href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
   />
 
-  <!-- your styles -->
+  <!-- Styles -->
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -31,13 +30,15 @@
 
   <hr>
 
-  <!-- FILTER -->
-  <label for="catchmentFilter">Catchment</label>
-  <select id="catchmentFilter">
-    <option value="all">All catchments</option>
-    <option value="Upper">Upper</option>
-    <option value="Middle">Middle</option>
-    <option value="Lower">Lower</option>
+  <!-- STREAM ORDER FILTER -->
+  <label for="streamOrderFilter">Stream Order</label>
+
+  <select id="streamOrderFilter">
+    <option value="all">All Stream Orders</option>
+    <option value="1">Stream Order 1</option>
+    <option value="2">Stream Order 2</option>
+    <option value="3">Stream Order 3</option>
+    <option value="4">Stream Order 4</option>
   </select>
 
   <hr>
@@ -45,14 +46,15 @@
   <!-- LEGEND -->
   <div>
     <b>Legend</b><br>
-    🔵 Upper catchment<br>
-    🟢 Middle catchment<br>
-    🔴 Lower catchment
+    🔵 Stream Order 1<br>
+    🟢 Stream Order 2<br>
+    🟠 Stream Order 3<br>
+    🔴 Stream Order 4
   </div>
 
   <hr>
 
-  <!-- 🧠 INFO PANEL (IMPORTANT ADDITION) -->
+  <!-- INFO PANEL -->
   <div id="infoPanel">
     <b>Selected Site</b>
     <p>Click a site to view details</p>
@@ -63,11 +65,6 @@
 <!-- MAP -->
 <div id="map"></div>
 
-<!-- SCRIPTS -->
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-<script src="script.js"></script>
-
-</body>
 <!-- DASHBOARD -->
 <div id="dashboard" style="
   position: absolute;
@@ -82,9 +79,18 @@
 ">
 
   <h3 id="dashTitle">Click a site</h3>
+
   <div id="chartContainer">
     No data yet
   </div>
 
 </div>
+
+<!-- Leaflet -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<!-- Your JavaScript -->
+<script src="script.js"></script>
+
+</body>
 </html>
