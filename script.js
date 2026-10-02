@@ -654,27 +654,27 @@ function drawSites(filter) {
       <br><br>
 
       🌲 Forest:
-      ${stats?.Forest_y != null ? Number(stats.Forest_y).toFixed(2) : "N/A"}%
+      ${stats?.Forest_y != null ? Number(stats.Forest_y).toFixed(1) : "N/A"}%
 
       <br>
 
       💧 Lake:
-      ${stats?.Lake_y != null ? Number(stats.Lake_y).toFixed(2) : "N/A"}%
+      ${stats?.Lake_y != null ? Number(stats.Lake_y).toFixed(1) : "N/A"}%
 
       <br>
 
       🪵 Peat:
-      ${stats?.Peat_s != null ? Number(stats.Peat_s).toFixed(2) : "N/A"}%
+      ${stats?.Peat_s != null ? Number(stats.Peat_s).toFixed(1) : "N/A"}%
 
       <br>
 
       🪨 Till:
-      ${stats?.TillThin != null ? Number(stats.TillThin).toFixed(2) : "N/A"}%
+      ${stats?.TillThin != null ? Number(stats.TillThin).toFixed(1) : "N/A"}%
 
       <br>
 
       🟤 Sorted Sediment:
-      ${stats?.SortedSed_s != null ? Number(stats.SortedSed_s).toFixed(2) : "N/A"}%
+      ${stats?.SortedSed_s != null ? Number(stats.SortedSed_s).toFixed(1) : "N/A"}%
 
       </div>
 
