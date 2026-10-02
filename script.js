@@ -1,4 +1,3 @@
-```javascript
 // ===================== MAP =====================
 
 const map = L.map('map').setView(
@@ -823,4 +822,3 @@ legend.onAdd =
 
 
 legend.addTo(map);
-```
